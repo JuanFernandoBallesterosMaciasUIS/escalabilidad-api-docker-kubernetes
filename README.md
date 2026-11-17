@@ -1,5 +1,7 @@
 # Proyecto Final: Análisis del comportamiento de una aplicación en distintos escenarios de despliegue
 
+Repositorio: https://github.com/JuanFernandoBallesterosMaciasUIS/escalabilidad-api-docker-kubernetes
+
 Una API REST de productos (FastAPI + PostgreSQL, 10.000 registros) desplegada con:
 
 1. **Docker Compose** (una sola máquina)
@@ -60,4 +62,4 @@ powershell -ExecutionPolicy Bypass -File .\ejecutar_pruebas.ps1
 Tarda unos 45 minutos. Los resultados quedan en `resultados/`.
 
 ### Notebook
-Se puede abrir `analisis.ipynb` en GitHub (las gráficas ya están generadas) o en Google Colab. En Colab, la primera celda clona el repositorio para tener acceso a los CSV.
+Se puede abrir `analisis.ipynb` en GitHub (las gráficas ya están generadas) o en [Google Colab](https://colab.research.google.com/github/JuanFernandoBallesterosMaciasUIS/escalabilidad-api-docker-kubernetes/blob/main/analisis.ipynb). En Colab, la primera celda clona el repositorio para tener acceso a los CSV.
