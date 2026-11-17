@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: tienda
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tienda"]
+      interval: 3s
+      retries: 20
+
+  api:
+    build: ./app
+    image: api-productos:1.0
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/tienda
+    ports:
+      - "8080:8000"            # mismo puerto que en Kubernetes
+    cpus: 1                    # mismo limite que cada replica en Kubernetes
+    mem_limit: 256m
+    depends_on:
+      db:
+        condition: service_healthy
